@@ -35,6 +35,7 @@ const createContext = async () => {
     repositories: {
       account: accountRepository,
       role: roleRepository,
+      permission: permissionRepository,
     },
     services: {
       account: accountService,

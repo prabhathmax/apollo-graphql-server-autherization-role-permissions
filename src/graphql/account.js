@@ -15,7 +15,7 @@ const typeDefs = gql`
   }
   type Profile {
     userId: Int!
-    firstName: String! @authenticated
+    firstName: String! 
     lastName: String!
     middleName: String
     createdAt: DateTimeMock!
@@ -33,11 +33,11 @@ const typeDefs = gql`
     middleName: String
   }
   extend type Mutation {
-    addAccountWithProfile(info: CreateAccountInput!): Account!
+    addAccountWithProfile(info: CreateAccountInput!): Account! 
     login(email: String!, password: String!): AuthenticationInfo
   }
   extend type Query {
-    allAccounts: [Account]!
+    allAccounts: [Account]! @authenticated @hasPermission(permission: "all_users") @hasRole(role: "admin")
   }
 `;
 

@@ -4,9 +4,8 @@ class PermissionRepository {
     this.columns = [
       'id',
       'name',
-      'display_name as displayName',
+      'displayName',
       'description',
-      'doclink',
       'created_at as createdAt',
       'updated_at as updatedAt',
     ];
