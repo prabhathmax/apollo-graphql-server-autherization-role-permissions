@@ -6,16 +6,16 @@ class RoleRepository {
       'name',
       'display_name as displayName',
       'description',
-      'created_at as createdAt',
-      'updated_at as updatedAt',
+      'createdAt',
+      'updatedAt',
     ];
   }
 
-  async findForAccountId(accountId) {
-    return this.database('role_user')
+  async findForAccountId(userId) {
+    return this.database('roleUser')
       .select(this.columns)
-      .where({ user_id: accountId })
-      .leftOuterJoin('roles', 'role_user.role_id', 'roles.id');
+      .where({ userId })
+      .leftOuterJoin('roles', 'roleUser.roleId', 'roles.id');
   }
 }
 
